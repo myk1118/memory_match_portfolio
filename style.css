@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    background-color: pink;
+    height: 20vh;
+}
+
+.stats {
+    width: 15%;
+    height: 80vh;
+    background-color: lightyellow;
+    float: left;
+}
+
+.timesPlayed {
+
+}
+
+.attempts {
+
+}
+
+.accuracy {
+
+}
+
+.reset {
+
+}
+
+.gameArea {
+    width: 85%;
+    height: 80vh;
+    background-color: rosybrown;
+    float: left;
+    position: relative;
+}
+
+.bigContainer {
+    width: 90%;
+    height: 95%;
+    background-color: lightgoldenrodyellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 0;
+}
+
+.cardContainer {
+    height: 33.33%;
+    width: 16.667%;
+    background-color: red;
+    display: inline-block;
+    position: relative;
+}
+
+.card {
+    height: 95%;
+    width: 75%;
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.front {
+    height: 100%;
+    width: 100%;
+    background-color: darkseagreen;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.back {
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    position: absolute;
+    border-radius: 10px;
+}
