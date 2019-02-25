@@ -2,31 +2,44 @@ $(document).ready(initializeApp);
 
 function initializeApp() {
     $(".card").click(card_clicked);
+    games_played++;
 }
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 2;
-var match_counter = 0;
+var total_possible_matches = 9;
+
+var matches = 0;
+var attempts = 0;
+var accuracy = 0;
+var games_played = 0;
 
 function card_clicked() {
-    console.log('Enter Card Click');
+    // console.log('Card Clicked');
     $(this).find('.back').hide();
     if (first_card_clicked === null) {
         first_card_clicked = $(this);
+        // display_stats();
         return;
     } else {
         second_card_clicked = $(this);
-        if (first_card_clicked === second_card_clicked) {
-            match_counter++;
+        attempts++;
+        var firstCardImage = $(first_card_clicked).find('.front').children().attr('src');
+        var secondCardImage = $(second_card_clicked).find('.front').children().attr('src');
+        if (firstCardImage === secondCardImage) {
+            matches++;
             first_card_clicked = null;
             second_card_clicked = null;
-            if (match_counter === total_possible_matches) {
-                console.log("You've got it!");
+            if (matches === total_possible_matches) {
+                display_stats();
+                alert("You matched all the cards!");
+                // console.log("You've got it!");
             } else {
+                display_stats();
                 return;
             }
         } else {
+            display_stats();
             setTimeout(resetCard, 2000);
         }
     }
@@ -37,6 +50,34 @@ function resetCard() {
     $(second_card_clicked).find('.back').show();
     first_card_clicked = null;
     second_card_clicked = null;
+}
+
+function display_stats() {
+    console.log("Display stats function called");
+    $(".games_played .value").text(games_played);
+    $(".attempts .value").text(attempts);
+    $(".matches .value").text(matches);
+    if (attempts === 0) {
+        accuracy = 0 + "%";
+    } else {
+        accuracy = (Math.floor((matches / attempts) * 100)) + "%";
+    }
+    $(".accuracy .value").text(accuracy);
+}
+
+function reset_stats() {
+    console.log("Reset stats function called");
+    accuracy = 0;
+    matches = 0;
+    attempts = 0;
+    display_stats();
+}
+
+function clickReset() {
+        games_played++;
+        reset_stats();
+        display_stats();
+        $(".card").find('.back').show()
 }
 
 /*

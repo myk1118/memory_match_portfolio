@@ -3,50 +3,97 @@ body {
     margin: 0;
 }
 
+.background_image::before {
+    box-sizing: border-box;
+    position: absolute;
+    background-image: url("memory_match_images/photo-1526376043067-5af36c35cd6c.jpeg");
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    opacity: .4;
+    z-index: -1;
+}
+
 .header {
-    background-color: pink;
+    /*background-color: pink;*/
     height: 20vh;
+    font-family: Helvetica;
+    position: relative;
+}
+
+.titleBox {
+    /*border: black 1px solid;*/
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.gameTitle {
+    text-align: center;
+    font-size: 2.8em;
+}
+
+.settingsBox {
+    width: 20%;
+    /*border: black 1px solid;*/
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.settings, .about {
+    display: inline-block;
+    font-size: 1em;
+    text-align: center;
+    position: relative;
+    width: 48%;
+    top: 20%;
 }
 
 .stats {
     width: 15%;
     height: 80vh;
-    background-color: lightyellow;
+    /*background-color: lightyellow;*/
     float: left;
 }
 
-.timesPlayed {
-
-}
-
-.attempts {
-
-}
-
-.accuracy {
-
+.games_played, .attempts, .matches, .accuracy {
+    height: 15%;
+    /*border: black solid 1px;*/
+    /*margin: auto;*/
+    text-align: center;
+    font-family: Helvetica;
 }
 
 .reset {
-
+    horiz-align: center;
+    height: 5%;
+    /*border: black solid 1px;*/
+    /*margin: auto;*/
+    text-align: center;
+    text-decoration: underline;
+    font-family: Helvetica;
 }
 
 .gameArea {
     width: 85%;
     height: 80vh;
-    background-color: rosybrown;
+    /*background-color: rosybrown;*/
     float: left;
     position: relative;
 }
 
 .bigContainer {
-    width: 90%;
-    height: 95%;
-    background-color: lightgoldenrodyellow;
+    width: 95%;
+    height: 100%;
+    /*background-color: lightgoldenrodyellow;*/
     position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
+    /*-ms-transform: translate(-50%, -50%);*/
     transform: translate(-50%, -50%);
     font-size: 0;
 }
@@ -54,7 +101,7 @@ body {
 .cardContainer {
     height: 33.33%;
     width: 16.667%;
-    background-color: red;
+    /*background-color: red;*/
     display: inline-block;
     position: relative;
 }
@@ -65,14 +112,14 @@ body {
     position: relative;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
+    /*-ms-transform: translate(-50%, -50%);*/
     transform: translate(-50%, -50%);
 }
 
 .front {
     height: 100%;
     width: 100%;
-    background-color: darkseagreen;
+    /*background-color: darkseagreen;*/
     position: absolute;
     border-radius: 10px;
 }
