@@ -6,7 +6,7 @@ body {
 .background_image::before {
     box-sizing: border-box;
     position: absolute;
-    background-image: url("memory_match_images/photo-1526376043067-5af36c35cd6c.jpeg");
+    background-image: url("images/photo-1499346030926-9a72daac6c63.jpeg");
     content: '';
     height: 100vh;
     width: 100vw;
@@ -16,14 +16,12 @@ body {
 }
 
 .header {
-    /*background-color: pink;*/
     height: 20vh;
     font-family: Helvetica;
     position: relative;
 }
 
 .titleBox {
-    /*border: black 1px solid;*/
     position: absolute;
     top: 22%;
     left: 50%;
@@ -37,14 +35,14 @@ body {
 
 .settingsBox {
     width: 20%;
-    /*border: black 1px solid;*/
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translate(-50%, 0%);
 }
 
-.settings, .about {
+.settings,
+.about {
     display: inline-block;
     font-size: 1em;
     text-align: center;
@@ -56,23 +54,20 @@ body {
 .stats {
     width: 15%;
     height: 80vh;
-    /*background-color: lightyellow;*/
     float: left;
 }
 
-.games_played, .attempts, .matches, .accuracy {
+.games_played,
+.attempts,
+.matches,
+.accuracy {
     height: 15%;
-    /*border: black solid 1px;*/
-    /*margin: auto;*/
     text-align: center;
     font-family: Helvetica;
 }
 
 .reset {
-    horiz-align: center;
     height: 5%;
-    /*border: black solid 1px;*/
-    /*margin: auto;*/
     text-align: center;
     text-decoration: underline;
     font-family: Helvetica;
@@ -81,7 +76,6 @@ body {
 .gameArea {
     width: 85%;
     height: 80vh;
-    /*background-color: rosybrown;*/
     float: left;
     position: relative;
 }
@@ -89,11 +83,9 @@ body {
 .bigContainer {
     width: 95%;
     height: 100%;
-    /*background-color: lightgoldenrodyellow;*/
     position: absolute;
     top: 50%;
     left: 50%;
-    /*-ms-transform: translate(-50%, -50%);*/
     transform: translate(-50%, -50%);
     font-size: 0;
 }
@@ -101,7 +93,6 @@ body {
 .cardContainer {
     height: 33.33%;
     width: 16.667%;
-    /*background-color: red;*/
     display: inline-block;
     position: relative;
 }
@@ -112,14 +103,12 @@ body {
     position: relative;
     top: 50%;
     left: 50%;
-    /*-ms-transform: translate(-50%, -50%);*/
     transform: translate(-50%, -50%);
 }
 
 .front {
     height: 100%;
     width: 100%;
-    /*background-color: darkseagreen;*/
     position: absolute;
     border-radius: 10px;
 }
@@ -137,7 +126,7 @@ body {
     width: 100%;
     position: absolute;
     border-radius: 10px;
-    background-image: url("memory_match_images/photo-1499346030926-9a72daac6c63.jpeg");
+    background-image: url("images/icons8-airport-100.png");
     background-size: cover;
     background-position: center;
 }

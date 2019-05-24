@@ -1,207 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="main.js"></script>
-
 </head>
+
 <body>
-<div class="background_image"></div>
-
-        <div class="header">
-            <!--<div>Game Logo</div>-->
-
-            <div class="titleBox">
-                <div class="gameTitle">MEMORY MATCH</div>
-            </div>
-
-            <div class="settingsBox">
-                <div class="settings">
-                    <a href="#">Settings</a>
-                </div>
-                <div class="about">
-                    <a href="about.html" target=_blank>About</a>
-                </div>
-            </div>
-
+    <div class="background_image"></div>
+    <div class="header">
+        <div class="titleBox">
+            <div class="gameTitle">MEMORY MATCH</div>
         </div>
-
-        <div class="stats">
-            <div class="games_played">
-                <div class="label">Games Played</div>
-                <div class="value"></div>
-            </div>
-            <div class="attempts">
-                <div class="label">Attempts</div>
-                <div class="value"></div>
-            </div>
-            <div class="matches">
-                <div class="label">Matches</div>
-                <div class="value"></div>
-            </div>
-            <div class="accuracy">
-                <div class="label">Accuracy</div>
-                <div class="value"></div>
-            </div>
-            <div class="reset" onclick="clickReset()">Reset Game</div>
+    </div>
+    <div class="stats">
+        <div class="games_played">
+            <div class="label">Games Played</div>
+            <div class="value"></div>
         </div>
-
-        <div class="gameArea">
-
-            <div class="bigContainer">
-
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo3.jpeg" alt="Italy">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo3.jpeg" alt="Italy">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo5.jpeg" alt="Iceland">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo5.jpeg" alt="Iceland">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo6.jpeg" alt="France">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo6.jpeg" alt="France">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo9.jpeg" alt="Europe">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo9.jpeg" alt="Europe">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo10.jpeg" alt="Europe Winter">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo10.jpeg" alt="Europe Winter">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo12.jpeg" alt="Japan">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo12.jpeg" alt="Japan">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo17.jpeg" alt="Greece">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo17.jpeg" alt="Greece">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo20.jpeg" alt="Europe Village">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo20.jpeg" alt="Europe Village">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo22.jpeg" alt="Greece Village">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-                <div class="cardContainer">
-                    <div class="card">
-                        <div class="front">
-                            <img src="memory_match_images/photo22.jpeg" alt="Greece Village">
-                        </div>
-                        <div class="back"></div>
-                    </div>
-                </div>
-
-            </div>
-
+        <div class="attempts">
+            <div class="label">Attempts</div>
+            <div class="value"></div>
         </div>
-
-
+        <div class="matches">
+            <div class="label">Matches</div>
+            <div class="value"></div>
+        </div>
+        <div class="accuracy">
+            <div class="label">Accuracy</div>
+            <div class="value"></div>
+        </div>
+        <div class="reset" onclick="clickReset()">Reset Game</div>
+    </div>
+    <div class="gameArea"></div>
 </body>
+
 </html>
