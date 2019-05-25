@@ -5,15 +5,15 @@ var second_card_clicked = null;
 var total_possible_matches = 9;
 var can_click_card = true;
 var images = [
-    'images/big-ben.png',
-    'images/colosseum.png',
-    'images/eiffel.png',
-    'images/golden-gate-bridge.png',
-    'images/pantheon.png',
-    'images/pyramids.png',
-    'images/shrine.png',
-    'images/torii-gate.png',
-    'images/torii-gate.png'
+    'images/abril-bridge.png',
+    'images/arc-de-triomphe.png',
+    'images/eiffel-tower-1.png',
+    'images/istanbul.png',
+    'images/moscow.png',
+    'images/palace2.png',
+    'images/shrine2.png',
+    'images/statue-of-liberty1.png',
+    'images/torii-gate2.png'
 ];
 var fullImages = images.concat(images);
 var matches = 0;
@@ -38,13 +38,15 @@ function shuffleCards(fullImages) {
 }
 
 function displayCards() {
-    for (var divIndex = 0; divIndex < fullImages.length; divIndex++) {
+    for (var index = 0; index < fullImages.length; index++) {
         var newCardContainer = $('<div>').addClass('cardContainer');
         var newCard = $('<div>').addClass('card');
         var frontCard = $('<div>').addClass('front');
-        var imageFile = $('<img>').attr('src', fullImages[divIndex]);
+        var frontImageFile = $('<img>').attr('src', fullImages[index]);
         var backCard = $('<div>').addClass('back');
-        frontCard.append(imageFile);
+        var backImageFile = $('<img>').attr('src', 'images/plane.png');
+        frontCard.append(frontImageFile);
+        backCard.append(backImageFile);
         newCard.append(frontCard);
         newCard.append(backCard);
         newCardContainer.append(newCard);

@@ -1,31 +1,35 @@
-body {
-    height: 100vh;
-    margin: 0;
+@font-face {
+    font-family: aktiv;
+    src: url(font/AktivGrotesk_Std_Lt.ttf);
 }
 
-.background_image::before {
-    box-sizing: border-box;
-    position: absolute;
-    background-image: url("images/photo-1499346030926-9a72daac6c63.jpeg");
-    content: '';
+body {
     height: 100vh;
     width: 100vw;
-    display: block;
-    opacity: .4;
-    z-index: -1;
+    margin: 0;
+    font-family: aktiv, Arial, Helvetica, sans-serif;
+}
+
+.background_image {
+    position: absolute;
+    background-image: url("images/photo-1499346030926-9a72daac6c63.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
 }
 
 .header {
-    height: 20vh;
-    font-family: Helvetica;
+    height: 20%;
     position: relative;
 }
 
 .titleBox {
     position: absolute;
-    top: 22%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
 }
 
 .gameTitle {
@@ -33,28 +37,15 @@ body {
     font-size: 2.8em;
 }
 
-.settingsBox {
-    width: 20%;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.settings,
-.about {
-    display: inline-block;
-    font-size: 1em;
-    text-align: center;
-    position: relative;
-    width: 48%;
-    top: 20%;
+.gameAreaContainer {
+    height: 78%;
+    display: flex;
+    justify-content: center;
 }
 
 .stats {
-    width: 15%;
-    height: 80vh;
-    float: left;
+    position: relative;
+    width: 20%;
 }
 
 .games_played,
@@ -63,70 +54,63 @@ body {
 .accuracy {
     height: 15%;
     text-align: center;
-    font-family: Helvetica;
+}
+
+.value {
+    margin: 20px 0 0 0;
 }
 
 .reset {
     height: 5%;
     text-align: center;
     text-decoration: underline;
-    font-family: Helvetica;
 }
 
 .gameArea {
-    width: 85%;
-    height: 80vh;
-    float: left;
+    width: 80%;
     position: relative;
-}
-
-.bigContainer {
-    width: 95%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cardContainer {
     height: 33.33%;
-    width: 16.667%;
-    display: inline-block;
+    width: 16.66%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 20px 0;
+    box-sizing: border-box;
 }
 
 .card {
-    height: 95%;
     width: 75%;
+    height: 100%;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
+.front,
+.back {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px
 }
 
 .front {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: 10px;
-}
-
-.front img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
+    background-color: lightyellow;
 }
 
 .back {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: 10px;
-    background-image: url("images/icons8-airport-100.png");
-    background-size: cover;
-    background-position: center;
+    background-color: white;
+}
+
+.front img,
+.back img {
+    height: 50%;
 }
