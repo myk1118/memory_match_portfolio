@@ -3,11 +3,29 @@
     src: url(font/AktivGrotesk_Std_Lt.ttf);
 }
 
+@font-face {
+    font-family: abril;
+    src: url(font/AbrilFatface-Regular.otf);
+}
+
 body {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    font-family: aktiv, Arial, Helvetica, sans-serif;
+    font-family: abril, Arial, Helvetica, sans-serif;
+}
+
+/* @media only screen and (orientation:portrait) {
+    body {
+        display: none;
+    }
+} */
+
+@media only screen and (orientation:portrait) {
+    body {
+        height: 100vw;
+        transform: rotate(90deg);
+    }
 }
 
 .background_image {
@@ -52,18 +70,17 @@ body {
 .attempts,
 .matches,
 .accuracy {
-    height: 15%;
     text-align: center;
 }
 
 .value {
-    margin: 20px 0 0 0;
+    margin: 20px 0;
 }
 
-.reset {
-    height: 5%;
-    text-align: center;
-    text-decoration: underline;
+.resetButton {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .gameArea {
