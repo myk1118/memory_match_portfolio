@@ -58,7 +58,7 @@ function card_clicked() {
     if (can_click_card === false || $(this).hasClass("revealed")) {
         return;
     }
-    $(this).find('.back').hide();
+    // $(this).find('.back').hide();
     if (first_card_clicked === null) {
         first_card_clicked = $(this);
         first_card_clicked.addClass("revealed");
@@ -83,14 +83,14 @@ function card_clicked() {
         } else {
             can_click_card = false;
             display_stats();
-            setTimeout(resetCard, 1000);
+            setTimeout(resetCard, 1500);
         }
     }
 }
 
 function resetCard() {
-    $(first_card_clicked).find('.back').show();
-    $(second_card_clicked).find('.back').show();
+    // $(first_card_clicked).find('.back').show();
+    // $(second_card_clicked).find('.back').show();
     first_card_clicked.removeClass('revealed');
     second_card_clicked.removeClass('revealed');
     first_card_clicked = null;
