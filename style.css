@@ -1,30 +1,35 @@
 @font-face {
-    font-family: aktiv;
-    src: url(font/AktivGrotesk_Std_Lt.ttf);
+    font-family: mightype;
+    src: url(font/Mightype\ Script.otf);
 }
 
 @font-face {
-    font-family: abril;
-    src: url(font/AbrilFatface-Regular.otf);
+    font-family: archer;
+    src: url(font/ArcherPro-Medium.otf);
 }
 
 body {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    font-family: abril, Arial, Helvetica, sans-serif;
+    font-family: mightype, Arial, Helvetica, sans-serif;
 }
 
-/* @media only screen and (orientation:portrait) {
-    body {
-        display: none;
+@media only screen and (orientation: portrait) {
+    html {
+        height: 100vh;
+        width: 100vw;
     }
-} */
 
-@media only screen and (orientation:portrait) {
     body {
         height: 100vw;
+        width: 100vh;
         transform: rotate(90deg);
+        transform-origin: right top;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        right: 0;
     }
 }
 
@@ -56,7 +61,7 @@ body {
 }
 
 .gameAreaContainer {
-    height: 78%;
+    height: 80%;
     display: flex;
     justify-content: center;
 }
@@ -69,22 +74,34 @@ body {
 .games_played,
 .attempts,
 .matches,
-.accuracy {
+.accuracy,
+.resetButtonContainer {
     text-align: center;
+    height: 20%;
+}
+
+.label,
+.value,
+.resetButton {
+    font-family: archer, Arial, Helvetica, sans-serif;
 }
 
 .value {
-    margin: 20px 0;
+    font-size: 24px;
 }
 
 .resetButton {
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    background-color: #6CA6CD;
+    border: transparent;
 }
 
 .gameArea {
     width: 80%;
+    padding: 0 2% 0 0;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -97,15 +114,23 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 0 0 20px 0;
+    padding: 0 1.5% 1.5% 0;
     box-sizing: border-box;
+    perspective: 1000px;
 }
 
 .card {
-    width: 75%;
+    width: 100%;
     height: 100%;
     position: relative;
     border-radius: 15px;
+    border: transparent;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card.revealed {
+    transform: rotateY(180deg);
 }
 
 .front,
@@ -116,11 +141,13 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
-    border-radius: 15px
+    border-radius: 15px;
+    backface-visibility: hidden;
 }
 
 .front {
     background-color: lightyellow;
+    transform: rotateY(180deg);
 }
 
 .back {
