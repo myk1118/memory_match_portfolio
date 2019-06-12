@@ -57,7 +57,8 @@ body {
 
 .gameTitle {
     text-align: center;
-    font-size: 2.8em;
+    font-size: 4em;
+    min-width: 350px;
 }
 
 .gameAreaContainer {
@@ -86,15 +87,18 @@ body {
     font-family: archer, Arial, Helvetica, sans-serif;
 }
 
+.label,
+.resetButton {
+    font-size: 1.2em;
+}
+
 .value {
-    font-size: 24px;
+    font-size: 2.5em;
 }
 
 .resetButton {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
+    top: 15%;
     background-color: #6CA6CD;
     border: transparent;
 }
@@ -143,10 +147,11 @@ body {
     width: 100%;
     border-radius: 15px;
     backface-visibility: hidden;
+    box-shadow: 2px 2px 4px lightgray;
 }
 
 .front {
-    background-color: lightyellow;
+    background-color: rgb(255, 255, 232);
     transform: rotateY(180deg);
 }
 

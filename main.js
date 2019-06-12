@@ -83,7 +83,7 @@ function card_clicked() {
         } else {
             can_click_card = false;
             display_stats();
-            setTimeout(resetCard, 1500);
+            setTimeout(resetCard, 1000);
         }
     }
 }
