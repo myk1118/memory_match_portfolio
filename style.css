@@ -12,25 +12,7 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    font-family: mightype, Arial, Helvetica, sans-serif;
-}
-
-@media only screen and (orientation: portrait) {
-    html {
-        height: 100vh;
-        width: 100vw;
-    }
-
-    body {
-        height: 100vw;
-        width: 100vh;
-        transform: rotate(90deg);
-        transform-origin: right top;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        right: 0;
-    }
+    font-family: archer, Arial, Helvetica, sans-serif;
 }
 
 .background_image {
@@ -41,6 +23,7 @@ body {
     height: 100%;
     width: 100%;
     opacity: 0.5;
+    z-index: -1;
 }
 
 .header {
@@ -56,6 +39,7 @@ body {
 }
 
 .gameTitle {
+    font-family: mightype, Arial, Helvetica, sans-serif;
     text-align: center;
     font-size: 4em;
     min-width: 350px;
@@ -79,12 +63,6 @@ body {
 .resetButtonContainer {
     text-align: center;
     height: 20%;
-}
-
-.label,
-.value,
-.resetButton {
-    font-family: archer, Arial, Helvetica, sans-serif;
 }
 
 .label,
@@ -162,4 +140,148 @@ body {
 .front img,
 .back img {
     height: 50%;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 0;
+}
+
+.airplane {
+    width: 65%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal-header .close {
+    padding: 0;
+    margin: 2% 4% 0 0;
+    font-size: 2.5em;
+}
+
+.modalTextContent {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+    top: -6vh;
+}
+
+.modal-title {
+    font-size: 2em;
+    line-height: none;
+}
+
+.modal-body {
+    font-size: 1.2em;
+    margin: 4px 0 20px 0;
+    padding: 0;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 0 0 1em 0;
+}
+
+.modalCloseBottom {
+    font-size: 1.2em;
+    background-color: #6CA6CD;
+    border: none;
+}
+
+@media only screen and (orientation: landscape) {
+    .rotatePhone {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+    .gameTitle {
+        font-size: 2em;
+    }
+
+    .label,
+    .resetButton {
+        font-size: 0.6em;
+    }
+
+    .value {
+        font-size: 1.5em;
+    }
+
+    .airplane {
+        width: 26%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 850px) and (orientation: landscape) {
+    .gameTitle {
+        font-size: 2.4em;
+    }
+
+    .label,
+    .resetButton {
+        font-size: 1em;
+    }
+
+    .value {
+        font-size: 1.5em;
+    }
+
+    .airplane {
+        width: 28%;
+    }
+
+}
+
+@media only screen and (orientation: portrait) {
+
+    .header,
+    .gameAreaContainer,
+    .gameArea,
+    .modal {
+        display: none;
+    }
+
+    .rotatePhone {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
+
+    .rotatePhoneImage {
+        width: 99vw;
+    }
+
+    .rotatePhoneText {
+        text-align: center;
+        font-size: 1.3em;
+        width: 85vw;
+    }
+}
+
+@media only screen and (max-width: 320px) and (orientation: portrait) {
+    .rotatePhoneImage {
+        width: 80vw;
+    }
+
+    .rotatePhoneText {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .rotatePhoneImage {
+        width: 70vw;
+    }
+
+    .rotatePhoneText {
+        font-size: 2em;
+        width: 70vw;
+    }
 }

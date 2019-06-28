@@ -75,7 +75,7 @@ function card_clicked() {
             second_card_clicked = null;
             if (matches === total_possible_matches) {
                 display_stats();
-                alert("You matched all the cards!");
+                $(".modal").modal("show");
             } else {
                 display_stats();
                 return;
