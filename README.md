@@ -11,5 +11,5 @@
 > - Javascript
 
 ## Author
-> Jaime Kim - jaimekim1118@gmail.com
+> Jaime Kim - jaimekim1118@gmail.com\
 > https://github.com/myk1118
