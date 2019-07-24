@@ -127,6 +127,7 @@ function resetGame() {
         displayCards();
         $(".card").click(card_clicked);
         resetStats();
+        first_card_clicked = null;
         gameHasBeenPlayed = false;
     }
 }
