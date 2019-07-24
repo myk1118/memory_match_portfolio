@@ -19,13 +19,14 @@ var fullImages = images.concat(images);
 var matches = 0;
 var attempts = 0;
 var accuracy = 0;
-var games_played = 0;
+var gamesPlayed = 0;
+var gameHasBeenPlayed = false;
 
 function initializeApp() {
-    display_stats();
     shuffleCards(fullImages);
     displayCards();
     $(".card").click(card_clicked);
+    displayStats();
 }
 
 function shuffleCards(fullImages) {
@@ -62,6 +63,7 @@ function card_clicked() {
     if (first_card_clicked === null) {
         first_card_clicked = $(this);
         first_card_clicked.addClass("revealed");
+        gameHasBeenPlayed = true;
         return;
     } else {
         second_card_clicked = $(this);
@@ -74,15 +76,15 @@ function card_clicked() {
             first_card_clicked = null;
             second_card_clicked = null;
             if (matches === total_possible_matches) {
-                display_stats();
+                displayStats();
                 $(".modal").modal("show");
             } else {
-                display_stats();
+                displayStats();
                 return;
             }
         } else {
             can_click_card = false;
-            display_stats();
+            displayStats();
             setTimeout(resetCard, 1000);
         }
     }
@@ -98,8 +100,8 @@ function resetCard() {
     can_click_card = true;
 }
 
-function display_stats() {
-    $(".games_played .value").text(games_played);
+function displayStats() {
+    $(".gamesPlayed .value").text(gamesPlayed);
     $(".attempts .value").text(attempts);
     $(".matches .value").text(matches);
     if (attempts === 0) {
@@ -110,18 +112,21 @@ function display_stats() {
     $(".accuracy .value").text(accuracy);
 }
 
-function reset_stats() {
+function resetStats() {
     accuracy = 0;
     matches = 0;
     attempts = 0;
-    display_stats();
+    displayStats();
 }
 
-function clickReset() {
-    games_played++;
-    reset_stats();
-    $(".gameArea").empty();
-    shuffleCards(fullImages);
-    displayCards();
-    $(".card").click(card_clicked);
+function resetGame() {
+    if (gameHasBeenPlayed) {
+        gamesPlayed++;
+        $(".gameArea").empty();
+        shuffleCards(fullImages);
+        displayCards();
+        $(".card").click(card_clicked);
+        resetStats();
+        gameHasBeenPlayed = false;
+    }
 }
