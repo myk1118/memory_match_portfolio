@@ -1,143 +1,292 @@
-body {
-    height: 100vh;
-    margin: 0;
+@font-face {
+    font-family: mightype;
+    src: url(font/Mightype\ Script.otf);
 }
 
-.background_image::before {
-    box-sizing: border-box;
-    position: absolute;
-    background-image: url("memory_match_images/photo-1526376043067-5af36c35cd6c.jpeg");
-    content: '';
+@font-face {
+    font-family: archer;
+    src: url(font/ArcherPro-Medium.otf);
+}
+
+body {
     height: 100vh;
     width: 100vw;
-    display: block;
-    opacity: .4;
+    margin: 0;
+    font-family: archer, Arial, Helvetica, sans-serif;
+}
+
+.background_image {
+    position: absolute;
+    background-image: url("images/photo-1499346030926-9a72daac6c63.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
     z-index: -1;
 }
 
 .header {
-    /*background-color: pink;*/
-    height: 20vh;
-    font-family: Helvetica;
+    height: 20%;
     position: relative;
 }
 
 .titleBox {
-    /*border: black 1px solid;*/
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.gameTitle {
-    text-align: center;
-    font-size: 2.8em;
-}
-
-.settingsBox {
-    width: 20%;
-    /*border: black 1px solid;*/
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.settings, .about {
-    display: inline-block;
-    font-size: 1em;
-    text-align: center;
-    position: relative;
-    width: 48%;
-    top: 20%;
-}
-
-.stats {
-    width: 15%;
-    height: 80vh;
-    /*background-color: lightyellow;*/
-    float: left;
-}
-
-.games_played, .attempts, .matches, .accuracy {
-    height: 15%;
-    /*border: black solid 1px;*/
-    /*margin: auto;*/
-    text-align: center;
-    font-family: Helvetica;
-}
-
-.reset {
-    horiz-align: center;
-    height: 5%;
-    /*border: black solid 1px;*/
-    /*margin: auto;*/
-    text-align: center;
-    text-decoration: underline;
-    font-family: Helvetica;
-}
-
-.gameArea {
-    width: 85%;
-    height: 80vh;
-    /*background-color: rosybrown;*/
-    float: left;
-    position: relative;
-}
-
-.bigContainer {
-    width: 95%;
-    height: 100%;
-    /*background-color: lightgoldenrodyellow;*/
     position: absolute;
     top: 50%;
     left: 50%;
-    /*-ms-transform: translate(-50%, -50%);*/
     transform: translate(-50%, -50%);
-    font-size: 0;
+}
+
+.gameTitle {
+    font-family: mightype, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 4em;
+    min-width: 350px;
+}
+
+.gameAreaContainer {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.stats {
+    position: relative;
+    width: 20%;
+}
+
+.gamesPlayed,
+.attempts,
+.matches,
+.accuracy,
+.resetButtonContainer {
+    text-align: center;
+    height: 20%;
+}
+
+.label,
+.resetButton {
+    font-size: 1.2em;
+}
+
+.value {
+    font-size: 2.5em;
+}
+
+.resetButton {
+    position: relative;
+    top: 15%;
+    background-color: #6CA6CD;
+    border: transparent;
+}
+
+.gameArea {
+    width: 80%;
+    padding: 0 2% 0 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cardContainer {
     height: 33.33%;
-    width: 16.667%;
-    /*background-color: red;*/
-    display: inline-block;
+    width: 16.66%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5% 1.5% 0;
+    box-sizing: border-box;
+    perspective: 1000px;
 }
 
 .card {
-    height: 95%;
-    width: 75%;
+    width: 100%;
+    height: 100%;
     position: relative;
-    top: 50%;
-    left: 50%;
-    /*-ms-transform: translate(-50%, -50%);*/
-    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    border: transparent;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: scale(0.92);
+    /* box-shadow: 10px 10px 10px lightgrey; */
+}
+
+.card.revealed {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 2px 2px 4px lightgray;
 }
 
 .front {
-    height: 100%;
-    width: 100%;
-    /*background-color: darkseagreen;*/
-    position: absolute;
-    border-radius: 10px;
-}
-
-.front img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
+    background-color: rgb(255, 255, 232);
+    transform: rotateY(180deg);
 }
 
 .back {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: 10px;
-    background-image: url("memory_match_images/photo-1499346030926-9a72daac6c63.jpeg");
-    background-size: cover;
-    background-position: center;
+    background-color: white;
+}
+
+.front img,
+.back img {
+    height: 50%;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 0;
+}
+
+.airplane {
+    width: 65%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal-header .close {
+    padding: 0;
+    margin: 2% 4% 0 0;
+    font-size: 2.5em;
+}
+
+.modalTextContent {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+    top: -6vh;
+}
+
+.modal-title {
+    font-size: 2em;
+    line-height: none;
+}
+
+.modal-body {
+    font-size: 1.2em;
+    margin: 4px 0 20px 0;
+    padding: 0;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 0 0 1em 0;
+}
+
+.modalCloseBottom {
+    font-size: 1.2em;
+    background-color: #6CA6CD;
+    border: none;
+}
+
+@media only screen and (orientation: landscape) {
+    .rotatePhone {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+    .gameTitle {
+        font-size: 2em;
+    }
+
+    .label,
+    .resetButton {
+        font-size: 0.6em;
+    }
+
+    .value {
+        font-size: 1.5em;
+    }
+
+    .airplane {
+        width: 26%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 850px) and (orientation: landscape) {
+    .gameTitle {
+        font-size: 2.4em;
+    }
+
+    .label,
+    .resetButton {
+        font-size: 1em;
+    }
+
+    .value {
+        font-size: 1.5em;
+    }
+
+    .airplane {
+        width: 28%;
+    }
+
+}
+
+@media only screen and (orientation: portrait) {
+
+    .header,
+    .gameAreaContainer,
+    .gameArea,
+    .modal {
+        display: none;
+    }
+
+    .rotatePhone {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
+
+    .rotatePhoneImage {
+        width: 99vw;
+    }
+
+    .rotatePhoneText {
+        text-align: center;
+        font-size: 1.3em;
+        width: 85vw;
+    }
+}
+
+@media only screen and (max-width: 320px) and (orientation: portrait) {
+    .rotatePhoneImage {
+        width: 80vw;
+    }
+
+    .rotatePhoneText {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .rotatePhoneImage {
+        width: 70vw;
+    }
+
+    .rotatePhoneText {
+        font-size: 2em;
+        width: 70vw;
+    }
 }
