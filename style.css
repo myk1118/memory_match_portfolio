@@ -67,7 +67,7 @@ body {
 
 .label,
 .resetButton {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .value {
@@ -76,7 +76,7 @@ body {
 
 .resetButton {
     position: relative;
-    top: 15%;
+    /* top: 15%; */
     background-color: #6CA6CD;
     border: transparent;
 }
